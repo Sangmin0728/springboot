@@ -34,6 +34,7 @@ public class UserController {
 
     @GetMapping("/users")
     public List<User> retrieveAllUsers() {
+
         return service.findAll();
     }
 
