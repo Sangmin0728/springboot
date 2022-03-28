@@ -12,7 +12,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.util.StringUtils;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
@@ -45,7 +44,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
                                                                          CorsEndpointProperties corsProperties,
                                                                          WebEndpointProperties webEndpointProperties,
                                                                          Environment environment) {
-        List<ExposableEndpoint<?>> allEndpoints = new ArrayList();
+        List<ExposableEndpoint<?>> allEndpoints = new ArrayList<>();
         Collection<ExposableWebEndpoint> webEndpoints = webEndpointsSupplier.getEndpoints();
         allEndpoints.addAll(webEndpoints);
         allEndpoints.addAll(servletEndpointsSupplier.getEndpoints());
